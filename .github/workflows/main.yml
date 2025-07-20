@@ -1,3 +1,4 @@
+# CI/CD Pipeline para build, teste e deploy automático na Koyeb
 name: CI/CD Pipeline
 
 on:
