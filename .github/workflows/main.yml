@@ -1,4 +1,3 @@
-# CI/CD Pipeline para build, teste e deploy automático na Koyeb
 name: CI/CD Pipeline
 
 on:
@@ -9,7 +8,7 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch:
+  workflow_dispatch: # Permite o acionamento manual
 
 env:
   DOCKER_USER: damaresgaia
@@ -31,7 +30,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.21.6'
+          go-version: '1.22'
 
       - name: Go Fmt & Vet
         run: |
@@ -58,7 +57,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.21.6'
+          go-version: '1.22'
 
       - name: Install gotestsum
         run: go install gotest.tools/gotestsum@latest
